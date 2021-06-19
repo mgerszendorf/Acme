@@ -13,6 +13,7 @@
 
 .App{
     overflow-x: hidden;
+    height: 300vh;
 }
 
 @media all and (min-width: 1024px){
