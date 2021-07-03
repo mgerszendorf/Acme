@@ -1,0 +1,228 @@
+.hotel_room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 2.5rem auto 0 auto;
+    background-color: #fff;
+    border-radius: 24px;
+}
+
+.hr_img {
+    position: relative;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.hr_img_desktop {
+    display: none;
+}
+
+.hr_icons {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 16px;
+}
+
+.hr_rating {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    width: 85px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.hr_rating p {
+    font-weight: 500;
+    font-size: 19px;
+    color: #22264C;
+}
+
+.hr_rating_icon {
+    color: #FFB320;
+    font-size: 20px;
+}
+
+.hr_heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: 8px;
+}
+
+.hr_heart_icon {
+    font-size: 20px;
+    color: #DFE0E7;
+    cursor: pointer;
+}
+
+.hr_heart_icon:hover {
+    color: #FD2633;
+}
+
+.room_name p {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #22264C;
+    max-width: 300px;
+    text-align: center;
+    margin: 2.8rem auto 0 auto;
+}
+
+.hr_text p {
+    font-size: 1.5rem;
+    color: #818498;
+    line-height: 32px;
+    max-width: 320px;
+    text-align: center;
+    margin: 2.8rem 1.5rem 0 1.5rem;
+}
+
+.hr_price p {
+    font-size: 4rem;
+    color: #22264C;
+    font-weight: 500;
+    margin: 2.8rem auto 0 auto;
+    max-width: 90px;
+    line-height: 0.9;
+
+}
+
+.hr_price p span {
+    font-size: 1.6rem;
+    color: #818498;
+    font-weight: normal;
+}
+
+.book_now_btn p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #45B5C9;
+    padding: 21px 124px;
+    background-color: #DDF2F5;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 2.8rem 0;
+}
+
+.book_now_btn p:hover {
+    background-color: #45B5C9;
+    color: #fff;
+}
+
+.hr_bottom_area{
+    display: none;
+}
+
+@media all and (max-width: 425px) {
+    .hr_img img {
+        width: 80vw;
+        max-width: 320px;
+    }
+
+    .room_name p,
+    .hr_text p,
+    .hr_price p {
+        margin-top: 1.5rem;
+    }
+
+    .book_now_btn p {
+        margin: 2.5rem auto;
+        padding: 21px 90px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .hr_img_mobile {
+        display: none;
+    }
+
+    .hr_img_desktop {
+        display: block;
+    }
+
+    .hr_img{
+        margin: 0;
+    }
+
+    .hotel_room {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 90vw;
+        max-width: 1440px;
+        padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+    }
+
+    .room_name p{
+        font-size: 1.8rem;
+        max-width: none;
+        margin: 0;
+        text-align: left;
+    }
+
+    .hr_text p{
+        font-size: 1rem;
+        max-width: none;
+        margin: 1rem 0 0 0;
+        max-width: 520px;
+        text-align: left;
+    }
+    
+    .hr_price{
+        margin: 1.5rem 0 0 auto;
+    }
+
+    .hr_price p {
+        font-size: 2.3rem;
+        max-width: none;
+        margin: 0;
+        max-width: 90px;
+    }
+
+    .hr_price p span{
+        font-size: 1rem;
+    }
+
+    .book_now_btn p{
+        font-size: 1rem;
+        margin: 0;
+        padding: 20px 35px;
+    }
+
+    .hr_left_area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem 0 2rem;
+    }
+
+    .hr_right_area{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 147px;
+    }
+
+    .hr_bottom_area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        color: #818498;
+        margin-top: 2.5rem;
+    }
+
+    .dot{
+        font-size: .8rem;
+        color: #C5C6D0;
+    }
+}
