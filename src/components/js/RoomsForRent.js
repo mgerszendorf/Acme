@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { DateRangePickerComponent } from "@syncfusion/ej2-react-calendars";
 import search_icon_desktop from "../img/search_icon_desktop.png";
 import RoomData from "./RoomData";
-import App from "./App";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { RiArrowUpSLine } from "react-icons/ri";
 
 function RoomsForRent(props) {
-  const [activePage, setActivePage] = useState(0);
+  const [activePage, setActivePage] = useState(1);
+  const [sortByActive, setSortByActive] = useState(false);
   let page_number_array = [];
 
   function changePage() {
@@ -20,17 +21,9 @@ function RoomsForRent(props) {
   }
   changePage();
 
-  // function selectedPage(number) {
-  //   setActivePage(number);
-  // }
-
-  // function handleLeftArrow() {
-  //   if (activePage > 1) {
-  //     setActivePage(activePage - 1);
-  //   } else {
-  //     return 1;
-  //   }
-  // }
+  function sortByActiveFunction() {
+    setSortByActive(!sortByActive);
+  }
 
   const datas = props.room_data.map((data) => (
     <RoomData
@@ -84,29 +77,38 @@ function RoomsForRent(props) {
         </div>
         <div className="filter_area">
           <div className="text_and_sort_by">
-            <p>651 properties found</p>
-            <div className="sort_by">
+            <p className="properties_found">{datas.length} properties found</p>
+            <div
+              className={sortByActive ? "sort_by_active" : "sort_by"}
+              onClick={sortByActiveFunction}
+            >
               <p>Sort by</p>
-              <div></div>
+              <RiArrowUpSLine
+                className={
+                  sortByActive ? "sort_by_arrow_active" : "sort_by_arrow"
+                }
+              />
             </div>
           </div>
-          <div className="popular">
-            <p>Popular</p>
+          <div className={sortByActive ? "top_rated_active" : "top_rated"}>
+            <p onClick={console.log(props.topRatedFilter)}>Top rated</p>
           </div>
-          <div className="top_rated">
-            <p>Top rated</p>
+          <div
+            className={sortByActive ? "highest_price_active" : "highest_price"}
+            onClick={props.highestPriceFilter}
+          >
+            <p>Highest price</p>
           </div>
-          <div className="sort_by_desktop">
-            <p>Sort by</p>
-            <div></div>
-          </div>
-          <div className="categories">
-            <p>Categories</p>
+          <div
+            className={sortByActive ? "lowest_price_active" : "lowest_price"}
+            onClick={props.lowestPriceFilter}
+          >
+            <p>Lowest price</p>
             <div></div>
           </div>
         </div>
         <Switch>
-          <Route path={`/page_${activePage}`}>
+          <Route path={[`/page_${activePage}`, "/"]}>
             <div>
               {datas[activePage * 4 - 4]}
               {datas[activePage * 4 - 3]}
@@ -123,21 +125,37 @@ function RoomsForRent(props) {
             <MdKeyboardArrowLeft />
           </div>
           {page_number_array.map((number) => (
-            <Link to={`/page_${number}`}>
-              <div
-                className="page_number"
-                onClick={() => setActivePage(number)}
-              >
-                <p>{number}</p>
-              </div>
+            <Link
+              className={activePage === number ? "active_page" : "page_number"}
+              onClick={() => {
+                setActivePage(number);
+              }}
+              to={
+                activePage === 1 ? [`/page_${number}`, "/"] : `/page_${number}`
+              }
+            >
+              {number}
             </Link>
           ))}
-          <div className="right_arrow">
+          <div
+            className="right_arrow"
+            onClick={() =>
+              setActivePage(
+                activePage < page_number_array.length
+                  ? activePage + 1
+                  : page_number_array.length
+              )
+            }
+          >
             <MdKeyboardArrowRight />
+          </div>
+          <div className="showing_pages">
+            <p>
+              Showing: {activePage}-{page_number_array.length}
+            </p>
           </div>
         </div>
       </section>
-      {console.log(activePage)}
     </Router>
   );
 }

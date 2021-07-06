@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import FindOutMore from "./FindOutMore";
 import RoomsForRent from "./RoomsForRent";
 import Footer from "./Footer";
+import FAQ from "./FAQ";
 import "../css/App.css";
 import "../css/Header.css";
 import "../css/DataRangePicker.css";
@@ -13,6 +14,7 @@ import "../css/FindOutMore.css";
 import "../css/RoomsForRent.css";
 import "../css/RoomData.css";
 import "../css/Footer.css";
+import "../css/FAQ.css";
 import hotel_room_img1 from "../img/hotel_room_img1.png";
 import hotel_room_img2 from "../img/hotel_room_img2.png";
 import hotel_room_img3 from "../img/hotel_room_img3.png";
@@ -82,7 +84,7 @@ function App() {
     },
     {
       id: 4,
-      name: "37th Floor Luxury Apartment",
+      name: "57th Floor Luxury Apartment",
       image: hotel_room_img1,
       imageDesktop: hotel_room_img1_desktop,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -95,7 +97,7 @@ function App() {
     },
     {
       id: 5,
-      name: "14th Floor Luxury Apartment",
+      name: "34th Floor Luxury Apartment",
       image: hotel_room_img2,
       imageDesktop: hotel_room_img2_desktop,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -108,7 +110,7 @@ function App() {
     },
     {
       id: 6,
-      name: "26th Floor Luxury Apartment",
+      name: "11th Floor Luxury Apartment",
       image: hotel_room_img3,
       imageDesktop: hotel_room_img3_desktop,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -121,7 +123,59 @@ function App() {
     },
     {
       id: 7,
-      name: "0th Floor Luxury Apartment",
+      name: "15th Floor Luxury Apartment",
+      image: hotel_room_img1,
+      imageDesktop: hotel_room_img1_desktop,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: "$199",
+      rating: "5,0",
+      bedrooms: "1 bedrooms",
+      bathroom: "1 bathroom",
+      surface: "62m",
+      persons: "2 persons",
+    },
+    {
+      id: 8,
+      name: "96th Floor Luxury Apartment",
+      image: hotel_room_img1,
+      imageDesktop: hotel_room_img1_desktop,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: "$164",
+      rating: "4,7",
+      bedrooms: "2 bedrooms",
+      bathroom: "1 bathroom",
+      surface: "124m",
+      persons: "4 persons",
+    },
+    {
+      id: 9,
+      name: "13th Floor Luxury Apartment",
+      image: hotel_room_img2,
+      imageDesktop: hotel_room_img2_desktop,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: "$154",
+      rating: "3,4",
+      bedrooms: "1 bedrooms",
+      bathroom: "1 bathroom",
+      surface: "74m",
+      persons: "2 persons",
+    },
+    {
+      id: 10,
+      name: "39th Floor Luxury Apartment",
+      image: hotel_room_img3,
+      imageDesktop: hotel_room_img3_desktop,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: "$202",
+      rating: "4,2",
+      bedrooms: "2 bedrooms",
+      bathroom: "1 bathroom",
+      surface: "114m",
+      persons: "4 persons",
+    },
+    {
+      id: 11,
+      name: "19th Floor Luxury Apartment",
       image: hotel_room_img1,
       imageDesktop: hotel_room_img1_desktop,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque rhoncus tristique habitasse pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -133,6 +187,24 @@ function App() {
       persons: "2 persons",
     },
   ];
+
+  function topRatedFilter() {
+    let rating = room_data.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+    let lastElement = rating.pop();
+    return rating.unshift(lastElement);
+  }
+
+  function highestPriceFilter() {
+    let highest_price = room_data.sort((a, b) => (a.price < b.price ? 1 : -1));
+    let lastElement = highest_price.pop();
+    return highest_price.unshift(lastElement);
+  }
+
+  function lowestPriceFilter() {
+    let lowest_price = room_data.sort((a, b) => (a.price > b.price ? 1 : -1));
+    let lastElement = lowest_price.pop();
+    return lowest_price.unshift(lastElement);
+  }
 
   return (
     <div className="App">
@@ -152,7 +224,15 @@ function App() {
           <FindOutMore />
         </Route>
         <Route exact path="/">
-          <RoomsForRent room_data={room_data} />
+          <RoomsForRent
+            room_data={room_data}
+            topRatedFilter={topRatedFilter}
+            highestPriceFilter={highestPriceFilter}
+            lowestPriceFilter={lowestPriceFilter}
+          />
+        </Route>
+        <Route exact path="/FAQ">
+          <FAQ />
         </Route>
         <Route path="/">{/* <Footer /> */}</Route>
       </Router>

@@ -139,8 +139,29 @@
 }
 
 /* FILTER AREA */
-.popular, .top_rated, .sort_by_desktop{
+.highest_price, .top_rated, .lowest_price{
     display: none;
+}
+
+.highest_price_active, .top_rated_active, .lowest_price_active{
+    display: block;
+    border: 1px solid #E1E8F2;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 1.5rem 1rem;
+    transition: .3s;
+}
+
+.highest_price_active:active, .top_rated_active:active, .lowest_price_active:active{
+    background-color: #E7F4F7;
+    border: 1px solid #45B5C9;
+}
+
+.highest_price_active p, .top_rated_active p, .lowest_price_active p{
+    font-size: 1.6rem;
+    color: #333545;
+    font-weight: 500;
+    padding: 1.4rem;
 }
 
 .filter_area{
@@ -161,54 +182,54 @@
 .text_and_sort_by p{
     color: #333545;
     font-weight: 500;
+    max-width: 120px;
 }
 
-.text_and_sort_by p{
+.properties_found{
     font-size: 1.8rem;
 }
 
-.sort_by{
-    padding: 1.6rem;
+.sort_by, .sort_by_active{
+    display: flex;
+    align-items: center;
     border: 1px solid #E1E8F2;
     border-radius: 16px;
+    padding: 1.6rem;
+    transition: .2s;
 }
 
-.sort_by p{
+.sort_by p, .sort_by_active p{
     font-size: 1.6rem;
 }
 
-
-.categories{
-    background-color: #fff;
-    width: 90vw;
-    margin: 2rem auto 0 auto;
-    border-radius: 16px;
-    padding: 3.2rem;
-    text-align: left;
-}
-
-.categories p{
+.sort_by_arrow, .sort_by_arrow_active{
     font-size: 1.6rem;
-    color: #333545;
-    font-weight: 500;
+    margin-left: 1rem;
 }
+
+.sort_by_arrow_active{
+    transform: rotate(180deg);
+    transition: .2s;
+}
+
+.sort_by_active{
+    background-color: #E7F4F7;
+    border: 1px solid #45B5C9;
+}
+
 
 @media all and (max-width: 340px){
-    .sort_by{
-        padding: 1rem;
-    }
-
     .text_and_sort_by{
         padding: 1.5rem;
     }
 }
 
 @media all and (min-width: 1024px){
-    .sort_by, .categories{
+    .sort_by, .sort_by_arrow, .sort_by_active{
         display: none;
     }
 
-    .popular, .top_rated, .sort_by_desktop{
+    .highest_price, .top_rated, .lowest_price{
         display: block;
     }
 
@@ -221,6 +242,7 @@
 
     .text_and_sort_by p{
         font-size: 1.3rem;
+        max-width: none;
     }
 
     .filter_area{
@@ -234,7 +256,7 @@
         border-radius: 16px;
     }
 
-    .popular, .top_rated, .sort_by_desktop{
+    .highest_price, .top_rated, .lowest_price{
         border: 1px solid #E1E8F2;
         border-radius: 12px;
         cursor: pointer;
@@ -242,16 +264,16 @@
         transition: .3s;
     }
 
-    .sort_by_desktop{
+    .lowest_price{
         margin-right: 2rem;
     }
 
-    .popular:hover, .top_rated:hover, .sort_by_desktop:hover{
+    .highest_price:hover, .top_rated:hover, .lowest_price:hover{
         background-color: #E7F4F7;
         border: 1px solid #45B5C9;
     }
 
-    .popular p, .top_rated p, .sort_by_desktop p{
+    .highest_price p, .top_rated p, .lowest_price p{
         color: #333545;
         font-weight: 500;
         padding: 1rem;
@@ -267,13 +289,32 @@
     margin: 2rem auto;
 }
 
-.left_arrow, .right_arrow, .page_number{
-    position: relative;
-    height: 56px;
-    width: 56px;
+.left_arrow, .right_arrow, .page_number, .active_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #22264C;
+    font-size: 1.3rem;
+    min-height: 56px;
+    min-width: 56px;
     border-radius: 14px;
     background: #fff;
     transition: .3s;
+    cursor: pointer;
+}
+
+.left_arrow, .right_arrow, .page_number{
+    background: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.left_arrow svg, .right_arrow svg{
+    font-size: 1.3rem;
+}
+
+.page_number, .active_page{
+    margin-left: .5rem;
 }
 
 .left_arrow{
@@ -281,28 +322,17 @@
 }
 
 .right_arrow{
-    margin-left: .5rem;
+    margin-left: 1rem;
 }
 
-.left_arrow:hover, .right_arrow:hover, .page_number:hover{
+.left_arrow:hover, .right_arrow:hover, .page_number:hover, .active_page{
     background-color: #E7F4F7;
     border: 1px solid #45B5C9;
 }
 
-.left_arrow svg, .right_arrow svg, .page_number p{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+.showing_pages{
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    width: 100%;
 }
-
-.page_number{
-    margin: 0 .5rem;
-    cursor: pointer;
-}
-
-.page_number p{
-    font-size: 1.5rem;
-}
-
