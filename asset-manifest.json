@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Acme/static/css/main.93b4dea7.chunk.css",
+    "main.js": "/Acme/static/js/main.9ff34981.chunk.js",
+    "main.js.map": "/Acme/static/js/main.9ff34981.chunk.js.map",
+    "runtime-main.js": "/Acme/static/js/runtime-main.5654698f.js",
+    "runtime-main.js.map": "/Acme/static/js/runtime-main.5654698f.js.map",
+    "static/js/2.a6050346.chunk.js": "/Acme/static/js/2.a6050346.chunk.js",
+    "static/js/2.a6050346.chunk.js.map": "/Acme/static/js/2.a6050346.chunk.js.map",
+    "static/js/3.804e075a.chunk.js": "/Acme/static/js/3.804e075a.chunk.js",
+    "static/js/3.804e075a.chunk.js.map": "/Acme/static/js/3.804e075a.chunk.js.map",
+    "index.html": "/Acme/index.html",
+    "static/css/main.93b4dea7.chunk.css.map": "/Acme/static/css/main.93b4dea7.chunk.css.map",
+    "static/js/2.a6050346.chunk.js.LICENSE.txt": "/Acme/static/js/2.a6050346.chunk.js.LICENSE.txt",
+    "static/media/fod_img1.c8fa029f.png": "/Acme/static/media/fod_img1.c8fa029f.png",
+    "static/media/fod_img2.ea2bd769.png": "/Acme/static/media/fod_img2.ea2bd769.png",
+    "static/media/fod_img3.2e27771f.png": "/Acme/static/media/fod_img3.2e27771f.png",
+    "static/media/fom_img1.ac56bf06.png": "/Acme/static/media/fom_img1.ac56bf06.png",
+    "static/media/fom_img2.e89c19a6.png": "/Acme/static/media/fom_img2.e89c19a6.png",
+    "static/media/fom_img3.0bc1dc29.png": "/Acme/static/media/fom_img3.0bc1dc29.png",
+    "static/media/fom_img4.6581ae5b.png": "/Acme/static/media/fom_img4.6581ae5b.png",
+    "static/media/fom_img5.42492bcd.png": "/Acme/static/media/fom_img5.42492bcd.png",
+    "static/media/fom_img6.e2262af6.png": "/Acme/static/media/fom_img6.e2262af6.png",
+    "static/media/hotel_room_img1.5554e84a.png": "/Acme/static/media/hotel_room_img1.5554e84a.png",
+    "static/media/hotel_room_img2.d3d3ef02.png": "/Acme/static/media/hotel_room_img2.d3d3ef02.png",
+    "static/media/hotel_room_img3.13dc72db.png": "/Acme/static/media/hotel_room_img3.13dc72db.png",
+    "static/media/hotel_services_img.25134ae2.png": "/Acme/static/media/hotel_services_img.25134ae2.png",
+    "static/media/slider_img1.273ee316.png": "/Acme/static/media/slider_img1.273ee316.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5654698f.js",
+    "static/js/2.a6050346.chunk.js",
+    "static/css/main.93b4dea7.chunk.css",
+    "static/js/main.9ff34981.chunk.js"
+  ]
+}
