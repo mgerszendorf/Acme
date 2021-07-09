@@ -7,6 +7,7 @@ import FindOutMore from "./FindOutMore";
 import RoomsForRent from "./RoomsForRent";
 import Footer from "./Footer";
 import FAQ from "./FAQ";
+import HotelServices from "./HotelServices";
 import "../css/App.css";
 import "../css/Header.css";
 import "../css/DataRangePicker.css";
@@ -15,6 +16,7 @@ import "../css/RoomsForRent.css";
 import "../css/RoomData.css";
 import "../css/Footer.css";
 import "../css/FAQ.css";
+import "../css/HotelServices.css";
 import hotel_room_img1 from "../img/hotel_room_img1.png";
 import hotel_room_img2 from "../img/hotel_room_img2.png";
 import hotel_room_img3 from "../img/hotel_room_img3.png";
@@ -233,6 +235,9 @@ function App() {
         </Route>
         <Route exact path="/FAQ">
           <FAQ />
+        </Route>
+        <Route exact path="/hotel_services">
+          <HotelServices />
         </Route>
         <Route path="/">{/* <Footer /> */}</Route>
       </Router>

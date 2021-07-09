@@ -1,0 +1,168 @@
+/* HOTEL SERVICES */
+
+.photo_cleaner{
+    display: none;
+}
+
+.hotel_services{
+    text-align: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hs_heading{
+    padding: 3rem 2rem 6rem 2rem;
+}
+
+.hs_heading h1{
+    font-size: 1.5rem;
+    color: #45B5C9;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hs_heading h2{
+    font-size: 3.6rem;
+    color: #333545;
+}
+
+.hs_top_area{
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.adventages_team div{
+    display: flex;
+}
+
+.hs_right_side h2{
+    font-size: 2.5rem;
+    color: #333545;
+    margin-bottom: 6rem;
+}
+
+.adventages_team div p{
+    font-size: 1.6rem;
+    color: #333545;
+    margin-bottom: 5rem;
+}
+
+.adventages_team div img{
+    max-height: 24px;
+    margin: 0 1rem;
+}
+
+@media all and (min-width: 1024px){
+    .photo_cleaner{
+        display: block;
+        max-width: 600px;
+        width: 50vw;
+    }
+
+    .hs_top_area{
+        justify-content: space-between;
+    }
+
+    .hs_heading h1{
+        font-size: 1rem;
+    }
+
+    .hs_heading h2{
+        font-size: 4rem;
+        margin-bottom: 8.8rem;
+    }
+
+    .hotel_services_wrapper{
+        padding: 5rem 2rem 2rem 2rem;
+    }
+
+    .hs_right_side{
+        position: relative;
+        width: 100%;
+        padding-left: 2rem;
+    }
+
+    .adventages_team{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .adventages_team div p{
+        text-align: left;
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+    }
+
+    .hs_right_side h2{
+        font-size: 2.5rem;
+        margin-bottom: 5rem;
+    }
+
+}
+
+/* OUR SERVICES */
+
+.service_2, .service_3, .service_4, .service_5, .service_6{
+    display: none;
+}
+
+.our_services{
+    background-color: #F7F8FB;
+    padding: 0 2rem;
+}
+
+.service_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service_1{
+    background-color: #1F242B;
+    border: 1px solid #E1E8F2;
+    border-radius: 16px;
+    padding: 3rem 1.5rem;
+    max-width: 424px;
+    max-height: 624px;
+}
+
+.service_1 img:nth-of-type(1){
+    margin-bottom: 2.5rem;
+}
+
+.service_1 h2{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.service_1 .service_text{
+    font-size: 1.5rem;
+    color: #A3A7BF;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.service_bottom_area div{
+    display: flex;
+    justify-content: left;
+}
+
+.service_bottom_area {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.service_bottom_area div p{
+    font-size: 1.5rem;
+    color: #A3A7BF;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.service_bottom_area div img {
+    margin: 0 1.5rem 1.5rem 0;
+    align-self: center;
+}
