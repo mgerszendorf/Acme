@@ -215,17 +215,17 @@ function App() {
           <Route path="/">
             <section className="header">
               <TopBar handleClickBurger={handleClickBurger} />
-              <Route exact path="/">
+              <Route path="/Acme">
                 <Slider />
               </Route>
               <Menu burger={burger} />
             </section>
           </Route>
         </Switch>
-        <Route exact path="/">
+        <Route path="/Acme">
           <FindOutMore />
         </Route>
-        <Route exact path="/">
+        <Route path="/Acme">
           <RoomsForRent
             room_data={room_data}
             topRatedFilter={topRatedFilter}
@@ -239,7 +239,9 @@ function App() {
         <Route exact path="/hotel_services">
           <HotelServices />
         </Route>
-        <Route path="/">{/* <Footer /> */}</Route>
+        <Route path="/">
+          <Footer />
+        </Route>
       </Router>
     </div>
   );

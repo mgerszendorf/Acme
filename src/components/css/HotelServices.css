@@ -6,6 +6,9 @@
 
 .hotel_services{
     text-align: center;
+}
+
+.hs_heading, .hs_top_area{
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -39,13 +42,14 @@
 .hs_right_side h2{
     font-size: 2.5rem;
     color: #333545;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 
 .adventages_team div p{
     font-size: 1.6rem;
     color: #333545;
     margin-bottom: 5rem;
+    text-align: left;
 }
 
 .adventages_team div img{
@@ -58,10 +62,12 @@
         display: block;
         max-width: 600px;
         width: 50vw;
+        border-radius: 14px;
     }
 
     .hs_top_area{
         justify-content: space-between;
+        margin-bottom: 4rem;
     }
 
     .hs_heading h1{
@@ -70,7 +76,7 @@
 
     .hs_heading h2{
         font-size: 4rem;
-        margin-bottom: 8.8rem;
+        margin-bottom: 5rem;
     }
 
     .hotel_services_wrapper{
@@ -102,67 +108,179 @@
 
 }
 
-/* OUR SERVICES */
+/* OUR TEAM */
 
-.service_2, .service_3, .service_4, .service_5, .service_6{
+.employee_img{
     display: none;
 }
 
-.our_services{
+.our_team{
     background-color: #F7F8FB;
-    padding: 0 2rem;
+    margin-bottom: 15rem;
 }
 
-.service_area{
+.our_team_wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.ot_main_content{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.service_1{
-    background-color: #1F242B;
-    border: 1px solid #E1E8F2;
-    border-radius: 16px;
-    padding: 3rem 1.5rem;
-    max-width: 424px;
-    max-height: 624px;
+.ot_top_section h2{
+    font-size: 2.7rem;
+    color: #333545;
+    max-width: 350px;
+    margin: 0 auto 4.5rem auto;
 }
 
-.service_1 img:nth-of-type(1){
-    margin-bottom: 2.5rem;
-}
-
-.service_1 h2{
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 2rem;
-}
-
-.service_1 .service_text{
-    font-size: 1.5rem;
-    color: #A3A7BF;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-}
-
-.service_bottom_area div{
-    display: flex;
-    justify-content: left;
-}
-
-.service_bottom_area {
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-.service_bottom_area div p{
-    font-size: 1.5rem;
-    color: #A3A7BF;
-    text-align: left;
+.ot_name {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #333545;
     margin-bottom: 1rem;
 }
 
-.service_bottom_area div img {
-    margin: 0 1.5rem 1.5rem 0;
-    align-self: center;
+.profession{
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: #45B5C9;
+    margin-bottom: 2.5rem;
+}
+
+.ot_left_area_txt_1, .ot_left_area_txt_2, .experience p, .year_of_creation p, .guest_served p{
+    font-size: 1.6rem;
+    color: #818498;
+}
+
+.ot_left_area_txt_1, .ot_left_area_txt_2{
+    max-width: 250px;
+    margin-bottom: 2rem;
+}
+
+.ot_information{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 250px;
+}
+
+.experience{
+    margin: 1rem 1rem 1rem 0;
+}
+
+.year_of_creation{
+    margin: 1rem 0 1rem 1rem;
+}
+
+.guest_served{
+    margin: 1rem;
+}
+
+.experience p span, .year_of_creation p span, .guest_served p span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333545;
+}
+
+.experience p, .year_of_creation p, .guest_served p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ot_left_arrow svg, .ot_right_arrow svg{
+    color: #333545;
+    font-size: 1.3rem;
+    min-height: 25px;
+    min-width: 25px;
+    margin: 1rem;
+}
+
+.ot_right_arrow svg{
+    margin-right: 0;
+}
+
+.ot_left_arrow svg{
+    margin-left: 0;
+}
+
+@media all and (min-width: 1024px){
+    .our_team{
+        margin-bottom: 10rem;
+    }
+    
+    .employee_img{
+        display: block;
+    }
+
+    .ot_main_content{
+        justify-content: space-between;
+    }
+
+    .ot_top_section h2{
+        font-size: 3.4rem;
+        max-width: 600px;
+    }
+
+    .ot_name{
+        font-size: 2.8rem;
+        text-align: left;
+    }
+
+    .profession{
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .ot_left_area_txt_1, .ot_left_area_txt_2{
+        font-size: 1.1rem;
+        max-width: 415px;
+        text-align: left;
+        line-height: 2;
+    }
+
+    .experience p, .year_of_creation p, .guest_served p{
+        font-size: 1.1rem;
+    }
+
+    .experience, .year_of_creation, .guest_served{
+        margin: 0;
+    }
+
+    .ot_information{
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        max-width: 415px;
+    }
+
+    .ot_left_arrow, .ot_right_arrow{
+        position: relative;
+        height: 56px;
+        width: 56px;
+        background-color: #45B5C9;
+        border-radius: 14px;
+        cursor: pointer;
+    }
+
+    .ot_left_arrow:hover, .ot_right_arrow:hover, .ot_left_arrow_style, .ot_right_arrow_style{
+        background-color: #a9f4ff;
+    }
+
+    .ot_left_arrow svg, .ot_right_arrow svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 56px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 2rem;
+    } 
 }

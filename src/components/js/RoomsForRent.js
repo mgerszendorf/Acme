@@ -108,7 +108,7 @@ function RoomsForRent(props) {
           </div>
         </div>
         <Switch>
-          <Route path={[`/page_${activePage}`, "/"]}>
+          <Route path={[`/Acme/page_${activePage}`, "/"]}>
             <div>
               {datas[activePage * 4 - 4]}
               {datas[activePage * 4 - 3]}
@@ -131,7 +131,9 @@ function RoomsForRent(props) {
                 setActivePage(number);
               }}
               to={
-                activePage === 1 ? [`/page_${number}`, "/"] : `/page_${number}`
+                activePage === 1
+                  ? [`/Acme/page_${number}`, "/"]
+                  : `/Acme/page_${number}`
               }
             >
               {number}

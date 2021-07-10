@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import facebook_icon from "./../img/facebook.png";
 import deviantart_icon from "./../img/deviantart.png";
 import youtube_icon from "./../img/youtube.png";
@@ -44,16 +45,16 @@ const Footer = () => {
           <nav className="bottom_menu">
             <ul class="menu_links">
               <li>
-                <a href="/">Start</a>
+                <Link to="/Acme">Start</Link>
               </li>
               <li>
-                <a href="/">About us</a>
+                <Link to="/hotel_services">About us</Link>
               </li>
               <li>
-                <a href="/">Rooms for Rent</a>
+                <Link to="/rooms_for_rent">Rooms for Rent</Link>
               </li>
               <li>
-                <a href="/">Help</a>
+                <Link to="/help">Help</Link>
               </li>
             </ul>
           </nav>

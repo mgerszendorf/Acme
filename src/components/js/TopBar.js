@@ -1,6 +1,7 @@
 // https://ej2.syncfusion.com/react/documentation/daterangepicker/range-selection/
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import search_icon from "../img/search_icon.png";
 import { DateRangePickerComponent } from "@syncfusion/ej2-react-calendars";
@@ -8,9 +9,9 @@ import { DateRangePickerComponent } from "@syncfusion/ej2-react-calendars";
 function TopBar(props) {
   return (
     <div className="top_bar_wrapper">
-      <div className="logo_tb">
+      <Link className="logo_tb" to="/Acme">
         <img src={logo} alt="Acme logo" />
-      </div>
+      </Link>
       <form className="top_form_tb">
         <div>
           <DateRangePickerComponent

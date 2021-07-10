@@ -1,7 +1,7 @@
 
 .faq{
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 auto 20rem auto;
     padding: 0 2rem;
 }
 
@@ -78,6 +78,10 @@
 }
 
 @media all and (min-width: 1024px){
+    .faq{
+        margin-bottom: 10rem;
+    }
+
     .faq_heading h1{
         font-size: 1rem;
     }
