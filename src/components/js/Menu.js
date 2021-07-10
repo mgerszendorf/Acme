@@ -46,7 +46,7 @@ function Menu(props) {
         className={props.burger ? "right_area_m active_burger" : "right_area_m"}
       >
         <div className="start_m">
-          <Link to="/">Start</Link>
+          <Link to="/Acme">Start</Link>
         </div>
         <div
           className="about_us_m"
