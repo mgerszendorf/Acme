@@ -108,6 +108,116 @@
 
 }
 
+/* OUR SERVICE */
+
+.our_services{
+    background-color: #F7F8FB;
+    padding: 4rem 0;
+}
+
+.our_services h2{
+    font-size: 2.5rem;
+    color: #333545;
+    margin-bottom: 4rem;
+}
+
+.service_1, .service_2, .service_3, .service_4, .service_5, .service_6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 424px;
+    max-height: 624px;
+    margin: 0 auto;
+    border-radius: 16px;
+    background-color: #fff;
+    border: 1px solid #E1E8F2;
+    padding: 2.5rem 0;
+}
+
+.service_none, .service_none, .service_none, .service_none, .service_none, .service_none{
+    display: none;
+}
+
+.os_icon{
+    margin-bottom: 2rem;
+}
+
+.os_title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333545;
+    margin-bottom: 1rem;
+}
+
+.os_text_1, .points p{
+    font-size: 1.6rem;
+    color: #A3A7BF;
+}
+
+.os_text_1{
+    margin-bottom: 3rem;
+    max-width: 300px;
+    line-height: 1.7;
+}
+
+.points p{
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+.one_point{
+    display: flex;
+}
+
+.one_point img {
+    align-self: center;
+    padding-right: 2rem;
+}
+
+.os_left_arrow svg, .os_right_arrow svg{
+    color: #1F242B;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+.os_left_arrow_active svg, .os_right_arrow_active svg{
+    color: #818498;
+}
+
+.os_left_arrow, .os_right_arrow{
+    padding: 80% 0.5rem;
+}
+
+@media all and (min-width: 370px){
+    .os_left_arrow, .os_right_arrow{
+        padding: 80% 1rem;
+    }
+}
+
+@media all and (min-width: 1024px){
+    .os_left_arrow, .os_right_arrow, .os_left_arrow_active, .os_right_arrow_active{
+        display: none;
+    }
+
+    .our_services h2{
+        font-size: 3.25rem;
+    }
+
+    .os_title{
+        font-size: 1.4rem;
+    }
+
+    .os_text_1, .points p{
+        font-size: 1rem;
+    }
+
+    .service_1, .service_2, .service_3, .service_4, .service_5, .service_6{
+        justify-content: center;
+    }
+}
+
+
 /* OUR TEAM */
 
 .employee_img{
@@ -115,8 +225,8 @@
 }
 
 .our_team{
-    background-color: #F7F8FB;
-    margin-bottom: 15rem;
+    background-color: #fff;
+    padding-bottom: 15rem;
 }
 
 .our_team_wrapper{
@@ -196,7 +306,6 @@
 
 .ot_left_arrow svg, .ot_right_arrow svg{
     color: #333545;
-    font-size: 1.3rem;
     min-height: 25px;
     min-width: 25px;
     margin: 1rem;
@@ -212,7 +321,7 @@
 
 @media all and (min-width: 1024px){
     .our_team{
-        margin-bottom: 10rem;
+        padding-bottom: 10rem;
     }
     
     .employee_img{

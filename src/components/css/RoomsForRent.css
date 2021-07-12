@@ -279,6 +279,7 @@
 
 .change_page{
     display: flex;
+    justify-content: center;
     width: 90vw;
     max-width: 1440px;
     margin: 2rem auto;
@@ -314,14 +315,25 @@
     margin-left: 1rem;
 }
 
-.left_arrow:hover, .right_arrow:hover, .page_number:hover, .active_page{
+.left_arrow:active, .right_arrow:active, .page_number:active, .active_page{
     background-color: #E7F4F7;
     border: 1px solid #45B5C9;
 }
 
 .showing_pages{
-    display: flex;
-    justify-content: flex-end;
-    align-self: center;
-    width: 100%;
+    display: none;
+}
+
+@media all and (min-width: 1024px){
+    .showing_pages{
+        display: flex;
+        justify-content: flex-end;
+        align-self: center;
+        width: 100%;
+    }
+
+    .left_arrow:hover, .right_arrow:hover, .page_number:hover, .active_page{
+        background-color: #E7F4F7;
+        border: 1px solid #45B5C9;
+    }
 }

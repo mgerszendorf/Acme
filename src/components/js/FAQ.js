@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RiArrowUpSLine } from "react-icons/ri";
 
 function FAQ() {
-  const [activeQuestion, setActiveQuestion] = useState(false);
+  const [activeQuestion, setActiveQuestion] = useState(-1);
 
   const question_and_answer_data = [
     {
@@ -34,10 +34,6 @@ function FAQ() {
     },
   ];
 
-  function activeQuestionFunction() {
-    setActiveQuestion(!activeQuestion);
-  }
-
   return (
     <section className="faq">
       <div className="faq_heading">
@@ -45,14 +41,29 @@ function FAQ() {
         <h2>Questions and Answers</h2>
       </div>
       {question_and_answer_data.map((data) => (
-        <div className="qaa" onClick={activeQuestionFunction}>
-          <div className={activeQuestion ? "active_question" : "question"}>
+        <div
+          className="qaa"
+          onClick={
+            activeQuestion > -1
+              ? () => setActiveQuestion(-1)
+              : () => setActiveQuestion(data.id)
+          }
+        >
+          <div
+            className={
+              activeQuestion === data.id ? "active_question" : "question"
+            }
+          >
             <p>{data.question}</p>
             <RiArrowUpSLine
-              className={activeQuestion ? "active_faq_arrow" : "faq_arrow"}
+              className={
+                activeQuestion === data.id ? "active_faq_arrow" : "faq_arrow"
+              }
             />
           </div>
-          <div className={activeQuestion ? "active_answer" : "answer"}>
+          <div
+            className={activeQuestion === data.id ? "active_answer" : "answer"}
+          >
             <p>{data.answer}</p>
           </div>
         </div>

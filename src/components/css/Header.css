@@ -91,7 +91,7 @@
 
 .slider_wrapper{
     position: relative;
-    height: 70vh;
+    height: 85vh;
 }
 
 .slider_img{
@@ -122,7 +122,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 5vh;
+    margin-bottom: 7vh;
 }
 
 .slider_bar .bar div {
@@ -189,6 +189,10 @@
 
 
 @media all and (min-width: 1024px){
+    .slider_wrapper{
+        height: 70vh;
+    }
+
     .slider_img{
         position: relative;
         display: block;

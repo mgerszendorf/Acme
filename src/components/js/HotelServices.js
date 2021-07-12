@@ -3,11 +3,30 @@ import { BrowserRouter as Router } from "react-router-dom";
 import hotel_services_img from "../img/hotel_services_img.png";
 import employee from "../img/employee.png";
 import icon from "../img/hotel_services_icon.png";
+import service_1 from "../img/service_1_icon.png";
+import service_2 from "../img/service_2_icon.png";
+import service_3 from "../img/service_3_icon.png";
+import service_4 from "../img/service_4_icon.png";
+import service_5 from "../img/service_5_icon.png";
+import service_6 from "../img/service_6_icon.png";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 function HotelServices() {
   const [arrowBtn, setArrowBtn] = useState(0);
+  const [ourTeamBtn, setOurTeamBtn] = useState(0);
+
+  function leftOurTeamBtn() {
+    if (ourTeamBtn > 0) {
+      setOurTeamBtn(ourTeamBtn - 1);
+    }
+  }
+
+  function rightOurTeamBtn() {
+    if (ourTeamBtn < our_service_data.length - 1) {
+      setOurTeamBtn(ourTeamBtn + 1);
+    }
+  }
 
   function leftArrowBtnFunction() {
     if (arrowBtn > 0) {
@@ -37,6 +56,69 @@ function HotelServices() {
     {
       id: 3,
       text: "We finish what we do",
+    },
+  ];
+
+  const our_service_data = [
+    {
+      id: 0,
+      img: service_1,
+      title: "Cleaning services",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
+    },
+    {
+      id: 1,
+      img: service_2,
+      title: "Club and bar",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
+    },
+    {
+      id: 2,
+      img: service_3,
+      title: "Animators",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
+    },
+    {
+      id: 3,
+      img: service_4,
+      title: "Café",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
+    },
+    {
+      id: 4,
+      img: service_5,
+      title: "Café",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
+    },
+    {
+      id: 5,
+      img: service_6,
+      title: "Personal trainer",
+      txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
+      point_txt_1: "Lorem ipsum dolor sit amdset",
+      point_txt_2: "Praesent blandit facilisis.",
+      point_txt_3: "Facilisis iaculis. Duis enim lectus.",
+      point_txt_4: "Consectetur adipiscing elit.",
     },
   ];
 
@@ -116,6 +198,66 @@ function HotelServices() {
             </div>
           </div>
         </div>
+
+        <div className="our_services">
+          <h2>Our services</h2>
+          {our_service_data.map((data) => (
+            <div
+              className={
+                ourTeamBtn === data.id
+                  ? `service_${data.id + 1}`
+                  : "service_none"
+              }
+            >
+              <div
+                className={
+                  ourTeamBtn === 0
+                    ? "os_left_arrow os_left_arrow_active"
+                    : "os_left_arrow"
+                }
+                onClick={leftOurTeamBtn}
+              >
+                <MdKeyboardArrowLeft />
+              </div>
+              <div>
+                <img className="os_icon" src={data.img} alt="Service icon" />
+                <div className="os_top_section">
+                  <p className="os_title">{data.title}</p>
+                  <p className="os_text_1">{data.txt}</p>
+                </div>
+                <div className="points">
+                  <div className="one_point">
+                    <img className="os_icon" src={icon} alt="Point icon" />
+                    <p>{data.point_txt_1}</p>
+                  </div>
+                  <div className="one_point">
+                    <img className="os_icon" src={icon} alt="Point icon" />
+                    <p>{data.point_txt_2}</p>
+                  </div>
+                  <div className="one_point">
+                    <img className="os_icon" src={icon} alt="Point icon" />
+                    <p>{data.point_txt_3}</p>
+                  </div>
+                  <div className="one_point">
+                    <img className="os_icon" src={icon} alt="Point icon" />
+                    <p>{data.point_txt_4}</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={
+                  ourTeamBtn === our_service_data.length - 1
+                    ? "os_right_arrow os_right_arrow_active"
+                    : "os_right_arrow"
+                }
+                onClick={rightOurTeamBtn}
+              >
+                <MdKeyboardArrowRight />
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="our_team">
           <div className="our_team_wrapper">
             <div className="ot_top_section">
