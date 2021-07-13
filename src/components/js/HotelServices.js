@@ -4,6 +4,7 @@ import hotel_services_img from "../img/hotel_services_img.png";
 import employee from "../img/employee.png";
 import icon from "../img/hotel_services_icon.png";
 import service_1 from "../img/service_1_icon.png";
+import service_1_desktop from "../img/service_1_icon_desktop.png";
 import service_2 from "../img/service_2_icon.png";
 import service_3 from "../img/service_3_icon.png";
 import service_4 from "../img/service_4_icon.png";
@@ -62,7 +63,8 @@ function HotelServices() {
   const our_service_data = [
     {
       id: 0,
-      img: service_1,
+      img: service_1_desktop,
+      img_mobile: service_1,
       title: "Cleaning services",
       txt: "Lorem ipsum dolor sit amdset, consectetur adipiscing elit. Praesent blandit facilisis iaculis. Duis enim lectus.",
       point_txt_1: "Lorem ipsum dolor sit amdset",
@@ -201,61 +203,93 @@ function HotelServices() {
 
         <div className="our_services">
           <h2>Our services</h2>
-          {our_service_data.map((data) => (
+
+          <div className="service_mobile">
             <div
               className={
-                ourTeamBtn === data.id
-                  ? `service_${data.id + 1}`
-                  : "service_none"
+                ourTeamBtn === 0
+                  ? "os_left_arrow os_left_arrow_active"
+                  : "os_left_arrow"
               }
+              onClick={leftOurTeamBtn}
             >
-              <div
-                className={
+              <MdKeyboardArrowLeft />
+            </div>
+            <div>
+              <img
+                className="os_icon"
+                src={
                   ourTeamBtn === 0
-                    ? "os_left_arrow os_left_arrow_active"
-                    : "os_left_arrow"
+                    ? our_service_data[ourTeamBtn].img_mobile
+                    : our_service_data[ourTeamBtn].img
                 }
-                onClick={leftOurTeamBtn}
-              >
-                <MdKeyboardArrowLeft />
+                alt="Service icon"
+              />
+              <div className="os_top_section">
+                <p className="os_title">{our_service_data[ourTeamBtn].title}</p>
+                <p className="os_text_1">{our_service_data[ourTeamBtn].txt}</p>
               </div>
-              <div>
-                <img className="os_icon" src={data.img} alt="Service icon" />
-                <div className="os_top_section">
-                  <p className="os_title">{data.title}</p>
-                  <p className="os_text_1">{data.txt}</p>
+              <div className="points">
+                <div className="one_point">
+                  <img className="os_icon" src={icon} alt="Point icon" />
+                  <p>{our_service_data[ourTeamBtn].point_txt_1}</p>
                 </div>
-                <div className="points">
-                  <div className="one_point">
-                    <img className="os_icon" src={icon} alt="Point icon" />
-                    <p>{data.point_txt_1}</p>
-                  </div>
-                  <div className="one_point">
-                    <img className="os_icon" src={icon} alt="Point icon" />
-                    <p>{data.point_txt_2}</p>
-                  </div>
-                  <div className="one_point">
-                    <img className="os_icon" src={icon} alt="Point icon" />
-                    <p>{data.point_txt_3}</p>
-                  </div>
-                  <div className="one_point">
-                    <img className="os_icon" src={icon} alt="Point icon" />
-                    <p>{data.point_txt_4}</p>
-                  </div>
+                <div className="one_point">
+                  <img className="os_icon" src={icon} alt="Point icon" />
+                  <p>{our_service_data[ourTeamBtn].point_txt_2}</p>
                 </div>
-              </div>
-              <div
-                className={
-                  ourTeamBtn === our_service_data.length - 1
-                    ? "os_right_arrow os_right_arrow_active"
-                    : "os_right_arrow"
-                }
-                onClick={rightOurTeamBtn}
-              >
-                <MdKeyboardArrowRight />
+                <div className="one_point">
+                  <img className="os_icon" src={icon} alt="Point icon" />
+                  <p>{our_service_data[ourTeamBtn].point_txt_3}</p>
+                </div>
+                <div className="one_point">
+                  <img className="os_icon" src={icon} alt="Point icon" />
+                  <p>{our_service_data[ourTeamBtn].point_txt_4}</p>
+                </div>
               </div>
             </div>
-          ))}
+            <div
+              className={
+                ourTeamBtn === our_service_data.length - 1
+                  ? "os_right_arrow os_right_arrow_active"
+                  : "os_right_arrow"
+              }
+              onClick={rightOurTeamBtn}
+            >
+              <MdKeyboardArrowRight />
+            </div>
+          </div>
+          <div className="our_services_wrapper">
+            {our_service_data.map((data) => (
+              <div className="service_desktop">
+                <div>
+                  <img className="os_icon" src={data.img} alt="Service icon" />
+                  <div className="os_top_section">
+                    <p className="os_title">{data.title}</p>
+                    <p className="os_text_1">{data.txt}</p>
+                  </div>
+                  <div className="points">
+                    <div className="one_point">
+                      <img className="os_icon" src={icon} alt="Point icon" />
+                      <p>{data.point_txt_1}</p>
+                    </div>
+                    <div className="one_point">
+                      <img className="os_icon" src={icon} alt="Point icon" />
+                      <p>{data.point_txt_2}</p>
+                    </div>
+                    <div className="one_point">
+                      <img className="os_icon" src={icon} alt="Point icon" />
+                      <p>{data.point_txt_3}</p>
+                    </div>
+                    <div className="one_point">
+                      <img className="os_icon" src={icon} alt="Point icon" />
+                      <p>{data.point_txt_4}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="our_team">

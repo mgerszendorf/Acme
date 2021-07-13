@@ -110,6 +110,10 @@
 
 /* OUR SERVICE */
 
+.service_desktop{
+    display: none;
+}
+
 .our_services{
     background-color: #F7F8FB;
     padding: 4rem 0;
@@ -121,8 +125,11 @@
     margin-bottom: 4rem;
 }
 
-.service_1, .service_2, .service_3, .service_4, .service_5, .service_6{
+.service_mobile{
     display: flex;
+}
+
+.service_mobile, .service_desktop{
     justify-content: space-between;
     align-items: center;
     width: 90%;
@@ -133,10 +140,6 @@
     background-color: #fff;
     border: 1px solid #E1E8F2;
     padding: 2.5rem 0;
-}
-
-.service_none, .service_none, .service_none, .service_none, .service_none, .service_none{
-    display: none;
 }
 
 .os_icon{
@@ -196,6 +199,30 @@
 }
 
 @media all and (min-width: 1024px){
+    .service_mobile {
+        display: none;
+    }
+
+    .our_services_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .service_desktop{
+        display: flex;
+        justify-content: center;
+    }
+
+    .service_desktop:nth-of-type(1), .service_desktop:nth-of-type(3), .service_desktop:nth-of-type(4){
+        margin-bottom: 3.5rem;
+    }
+
+    .service_desktop:nth-of-type(1){
+        background-color: #1F242B;
+    }
+
     .os_left_arrow, .os_right_arrow, .os_left_arrow_active, .os_right_arrow_active{
         display: none;
     }
@@ -208,12 +235,18 @@
         font-size: 1.4rem;
     }
 
+    .our_services_wrapper .service_desktop:nth-of-type(1)  .os_title{
+        color: #fff;
+    }
+
     .os_text_1, .points p{
         font-size: 1rem;
     }
+}
 
-    .service_1, .service_2, .service_3, .service_4, .service_5, .service_6{
-        justify-content: center;
+@media all and (min-width: 1400px){
+    .our_services_wrapper{
+        max-width: 1440px;
     }
 }
 
