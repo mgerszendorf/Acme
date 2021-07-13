@@ -203,7 +203,7 @@ function HotelServices() {
 
         <div className="our_services">
           <h2>Our services</h2>
-
+          {/* Mobile */}
           <div className="service_mobile">
             <div
               className={
@@ -259,6 +259,7 @@ function HotelServices() {
               <MdKeyboardArrowRight />
             </div>
           </div>
+          {/* Desktop */}
           <div className="our_services_wrapper">
             {our_service_data.map((data) => (
               <div className="service_desktop">
@@ -291,7 +292,6 @@ function HotelServices() {
             ))}
           </div>
         </div>
-
         <div className="our_team">
           <div className="our_team_wrapper">
             <div className="ot_top_section">
