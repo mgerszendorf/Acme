@@ -90,18 +90,21 @@ function RoomsForRent(props) {
               />
             </div>
           </div>
-          <div className={sortByActive ? "top_rated_active" : "top_rated"}>
-            <p onClick={console.log(props.topRatedFilter)}>Top rated</p>
+          <div
+            className={sortByActive ? "top_rated_active" : "top_rated"}
+            onClick={() => props.topRatedFilter()}
+          >
+            <p>Top rated</p>
           </div>
           <div
             className={sortByActive ? "highest_price_active" : "highest_price"}
-            onClick={props.highestPriceFilter}
+            onClick={() => props.highestPriceFilter()}
           >
             <p>Highest price</p>
           </div>
           <div
             className={sortByActive ? "lowest_price_active" : "lowest_price"}
-            onClick={props.lowestPriceFilter}
+            onClick={() => props.lowestPriceFilter()}
           >
             <p>Lowest price</p>
             <div></div>

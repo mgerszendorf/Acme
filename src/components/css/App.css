@@ -15,6 +15,11 @@
     overflow-x: hidden;
 }
 
+body.js-mobile-menu-open {
+    overflow: hidden;
+    height:100%;
+}
+
 @media all and (min-width: 1024px){
     *{
         font-size: 16px;

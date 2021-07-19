@@ -1,6 +1,6 @@
 .rooms_for_rent{
     background-color: #F7F8FB;
-    padding: 5vw 2rem 17rem 2rem;
+    padding: 5rem 2rem 17rem 2rem;
     outline: none;
     border: none;
     color: #818498;
@@ -45,7 +45,6 @@
 
 .rooms_for_rent, .se_persons,  .se_rooms{
     border-radius: 16px;
-    border: 1px solid #E1E8F2;
     flex-grow: 1;
 }
 

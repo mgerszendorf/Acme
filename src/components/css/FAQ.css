@@ -41,6 +41,7 @@
 .question p, .active_question p{
     font-size: 1.8rem;
     font-weight: 500;
+    color: #22264C;
 }
 
 .active_question{

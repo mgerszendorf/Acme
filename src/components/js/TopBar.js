@@ -37,7 +37,12 @@ function TopBar(props) {
           <img src={search_icon} alt="Search button" />
         </button>
       </form>
-      <div className="burger_tb" onClick={props.handleClickBurger}>
+      <div
+        className="burger_tb"
+        onClick={() => {
+          props.handleClickBurger();
+        }}
+      >
         <div></div>
         <div></div>
         <div></div>

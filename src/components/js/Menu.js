@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { RiArrowUpSLine } from "react-icons/ri";
 import mail_icon from "../img/mail_icon.png";
 import phone_icon from "../img/phone_icon.png";
@@ -44,6 +44,10 @@ function Menu(props) {
       </div>
       <nav
         className={props.burger ? "right_area_m active_burger" : "right_area_m"}
+        onClick={() => {
+          props.setBurger(false);
+          props.disableActiveMenu();
+        }}
       >
         <div className="start_m">
           <Link to="/Acme">Start</Link>
@@ -79,7 +83,7 @@ function Menu(props) {
           </ul>
         </div>
         <div className="rooms_for_rent_m">
-          <Link to="/rooms_for_rent">Rooms for rent</Link>
+          <Link>Rooms for rent</Link>
         </div>
         <div className="help_m">
           <Link to="/help">Help</Link>

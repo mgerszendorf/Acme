@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import TopBar from "./TopBar";
 import Slider from "./Slider";
@@ -8,6 +8,8 @@ import RoomsForRent from "./RoomsForRent";
 import Footer from "./Footer";
 import FAQ from "./FAQ";
 import HotelServices from "./HotelServices";
+import Help from "./Help";
+import Message from "./Message";
 import "../css/App.css";
 import "../css/Header.css";
 import "../css/DataRangePicker.css";
@@ -17,6 +19,8 @@ import "../css/RoomData.css";
 import "../css/Footer.css";
 import "../css/FAQ.css";
 import "../css/HotelServices.css";
+import "../css/Help.css";
+import "../css/Message.css";
 import hotel_room_img1 from "../img/hotel_room_img1.png";
 import hotel_room_img2 from "../img/hotel_room_img2.png";
 import hotel_room_img3 from "../img/hotel_room_img3.png";
@@ -29,6 +33,15 @@ function App() {
 
   function handleClickBurger() {
     setBurger(!burger);
+    if (burger) {
+      document.body.classList.remove("js-mobile-menu-open");
+    } else {
+      document.body.classList.add("js-mobile-menu-open");
+    }
+  }
+
+  function disableActiveMenu() {
+    document.body.classList.remove("js-mobile-menu-open");
   }
 
   const room_data = [
@@ -218,7 +231,11 @@ function App() {
               <Route path="/Acme">
                 <Slider />
               </Route>
-              <Menu burger={burger} />
+              <Menu
+                burger={burger}
+                setBurger={setBurger}
+                disableActiveMenu={disableActiveMenu}
+              />
             </section>
           </Route>
         </Switch>
@@ -227,6 +244,7 @@ function App() {
         </Route>
         <Route path="/Acme">
           <RoomsForRent
+            id="rooms_for_rent"
             room_data={room_data}
             topRatedFilter={topRatedFilter}
             highestPriceFilter={highestPriceFilter}
@@ -238,6 +256,9 @@ function App() {
         </Route>
         <Route exact path="/hotel_services">
           <HotelServices />
+        </Route>
+        <Route exact path="/help">
+          <Help />
         </Route>
         <Route path="/">
           <Footer />
