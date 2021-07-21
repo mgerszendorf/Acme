@@ -11,6 +11,9 @@ function RoomsForRent(props) {
   const [activePage, setActivePage] = useState(1);
   const [sortByActive, setSortByActive] = useState(false);
   let page_number_array = [];
+  const [personsValue, setPersonsValue] = useState(0);
+  const [roomsValue, setRoomsValue] = useState(0);
+  const [searchBtn, setSearchBtn] = useState(false);
 
   function changePage() {
     let j = 0;
@@ -25,21 +28,31 @@ function RoomsForRent(props) {
     setSortByActive(!sortByActive);
   }
 
-  const datas = props.room_data.map((data) => (
-    <RoomData
-      id={data.id}
-      name={data.name}
-      image={data.image}
-      imageDesktop={data.imageDesktop}
-      text={data.text}
-      price={data.price}
-      rating={data.rating}
-      bedrooms={data.bedrooms}
-      bathroom={data.bathroom}
-      surface={data.surface}
-      persons={data.persons}
-    />
-  ));
+  function searchBtnFunction(e) {
+    e.preventDefault();
+  }
+
+  const datas = props.room_data
+    .filter(
+      (number) =>
+        number.persons.includes(personsValue || " ") &&
+        number.bedrooms.includes(roomsValue || " ")
+    )
+    .map((data) => (
+      <RoomData
+        id={data.id}
+        name={data.name}
+        image={data.image}
+        imageDesktop={data.imageDesktop}
+        text={data.text}
+        price={data.price}
+        rating={data.rating}
+        bedrooms={data.bedrooms}
+        bathroom={data.bathroom}
+        surface={data.surface}
+        persons={data.persons}
+      />
+    ));
 
   return (
     <Router>
@@ -57,20 +70,26 @@ function RoomsForRent(props) {
             </div>
             <input
               className="se_persons"
-              type="text"
+              type="number"
               placeholder="How many people?"
               onFocus={(e) => (e.target.placeholder = "")}
               onBlur={(e) => (e.target.placeholder = "How many people?")}
+              onChange={(e) => setPersonsValue(e.target.value)}
             />
             <input
               className="se_rooms"
-              type="text"
+              type="number"
               placeholder="How many rooms?"
               onFocus={(e) => (e.target.placeholder = "")}
               onBlur={(e) => (e.target.placeholder = "How many rooms?")}
+              onChange={(e) => setRoomsValue(e.target.value)}
             />
             <button className="se_search_btn_mobile">Search</button>
-            <button className="se_search_btn_desktop">
+            <button
+              type="submit"
+              className="se_search_btn_desktop"
+              onSubmit={searchBtnFunction}
+            >
               <img src={search_icon_desktop} alt="Search button" />
             </button>
           </form>

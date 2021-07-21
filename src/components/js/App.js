@@ -30,6 +30,8 @@ import hotel_room_img3_desktop from "../img/fod_img3.png";
 
 function App() {
   const [burger, setBurger] = useState(false);
+  // const [personsValue, setPersonsValue] = useState(0);
+  // const [roomsValue, setRoomsValue] = useState(0);
 
   function handleClickBurger() {
     setBurger(!burger);
@@ -249,6 +251,10 @@ function App() {
             topRatedFilter={topRatedFilter}
             highestPriceFilter={highestPriceFilter}
             lowestPriceFilter={lowestPriceFilter}
+            // setPersonsValue={setPersonsValue}
+            // setRoomsValue={setRoomsValue}
+            // personsValue={personsValue}
+            // searchEngine={searchEngine}
           />
         </Route>
         <Route exact path="/FAQ">
@@ -259,6 +265,9 @@ function App() {
         </Route>
         <Route exact path="/help">
           <Help />
+        </Route>
+        <Route path="/messages">
+          <Message />
         </Route>
         <Route path="/">
           <Footer />

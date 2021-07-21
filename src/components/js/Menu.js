@@ -75,7 +75,7 @@ function Menu(props) {
               <Link to="/faq">FAQ</Link>
             </li>
             <li>
-              <Link to="/message">Message</Link>
+              <Link to="/messages">Messages</Link>
             </li>
             <li>
               <Link to="/hotel_services">Hotel services</Link>

@@ -1,0 +1,106 @@
+.message{
+    padding: 0 2rem 15rem 2rem;
+}
+
+.message_top_txt h1{
+    font-size: 1rem;
+    color: #45B5C9;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.message_top_txt h2{
+    font-size: 4rem;
+    color: #333545;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.message_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 70vh;
+    width: 80vw;
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 2px solid #E1E8F2;
+}
+
+.message_form{
+    display: flex;
+    border-top: 2px solid #E1E8F2;
+}
+
+.message_text_area{
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    padding: 2rem;
+    outline: none;
+    border: none;
+    color: #818498;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.send_btn{
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background: #45B5C9;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    margin: 1rem 2rem;
+}
+
+.send_btn img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.place_for_messages{
+    /* width: 100%; */
+    height: 100%;
+    margin: 2rem 2rem;
+}
+
+.hotel_message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hotel_message p {
+    color: #22264C;
+    font-weight: 500;
+    border: 2px solid #E1E8F2;
+    border-radius: 18px 0 18px 18px;
+    padding: .7rem 2rem;
+    margin-top: 1rem;
+}
+
+.user_message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user_message p{
+    color: #fff;
+    background-color: #45B5C9;
+    font-weight: 500;
+    border-radius: 0 18px 18px 18px;
+    padding: .7rem 2rem;
+    margin-top: 1rem;
+}
+
+.user_message_none{
+    display: none;
+}
