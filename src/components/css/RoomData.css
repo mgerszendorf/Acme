@@ -111,6 +111,7 @@
     border-radius: 12px;
     cursor: pointer;
     margin: 2.8rem 0;
+    transition: .3s;
 }
 
 .book_now_btn p:hover {

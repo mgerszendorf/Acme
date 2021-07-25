@@ -50,7 +50,7 @@
     width: 44px;
     height: 44px;
     background: #45B5C9;
-    border-radius: 25px;
+    border-radius: 50%;
     outline: none;
     border: none;
     cursor: pointer;
@@ -66,7 +66,6 @@
 }
 
 .place_for_messages{
-    /* width: 100%; */
     height: 100%;
     margin: 2rem 2rem;
 }
@@ -93,6 +92,8 @@
 }
 
 .user_message p{
+    max-width: 90%;
+    word-wrap:break-word;
     color: #fff;
     background-color: #45B5C9;
     font-weight: 500;
@@ -101,6 +102,35 @@
     margin-top: 1rem;
 }
 
-.user_message_none{
-    display: none;
+
+@media all and (max-width: 1024px){
+    .message{
+        padding-bottom: 20rem;
+    }
+
+    .message_text_area{
+        font-size: 1.4rem;
+    }
+
+    .send_btn{
+        min-width: 44px;
+        margin: 1rem 2rem;
+    }
+
+    .user_message p{
+        font-size: 1.4rem;
+    }
+
+    .hotel_message p{
+        font-size: 1.4rem;
+    }
+    
+    .message_area{
+        width: 90vw;
+    }
+
+    .user_message{
+        max-width: 90%;
+        flex-wrap:inherit;
+    }
 }

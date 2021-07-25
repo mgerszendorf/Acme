@@ -1,5 +1,4 @@
 /* Header is TopBar, Slider and Menu  */
-
 /* font-family: 'Roboto', sans-serif; */
 /* font-family: 'Red Hat Display'; */
 
@@ -364,6 +363,10 @@
         transition: color .2s;
     }
 
+    .rooms_for_rent_m a a{
+        padding: 0;
+    }
+
     .start_m a:hover, .about_us_btn_m:hover, .rooms_for_rent_m a:hover, .help_m a:hover, .about_us_btn_m p:hover{
         color: #45B5C9;
     }
@@ -393,6 +396,10 @@
 
     .header_about_us_btn_active li a:hover{
         color: #45B5C9;
+    }
+
+    .rooms_for_rent_m{
+        cursor: pointer;
     }
 }
 

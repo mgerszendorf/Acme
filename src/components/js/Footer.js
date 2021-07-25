@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 import facebook_icon from "./../img/facebook.png";
 import deviantart_icon from "./../img/deviantart.png";
 import youtube_icon from "./../img/youtube.png";
@@ -43,7 +44,7 @@ const Footer = () => {
             </a>
           </div>
           <nav className="bottom_menu">
-            <ul class="menu_links">
+            <ul className="menu_links">
               <li>
                 <Link to="/Acme">Start</Link>
               </li>
@@ -51,7 +52,18 @@ const Footer = () => {
                 <Link to="/hotel_services">About us</Link>
               </li>
               <li>
-                <Link to="/rooms_for_rent">Rooms for Rent</Link>
+                <LinkScroll
+                  activeClass="active"
+                  to="rooms_for_rent"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <Link to="/Acme" className="rooms_for_rent_link">
+                    Rooms for Rent
+                  </Link>
+                </LinkScroll>
               </li>
               <li>
                 <Link to="/help">Help</Link>

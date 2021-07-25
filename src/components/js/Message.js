@@ -3,9 +3,11 @@ import send_img from "../img/send_img.png";
 
 function Message() {
   const [message, setMessage] = useState("");
+  const [text, setText] = useState([]);
 
   function messageFunction(e) {
     e.preventDefault();
+    setText(message);
   }
 
   return (
@@ -20,15 +22,11 @@ function Message() {
             <p>Hello!</p>
             <p>How can we help you?</p>
           </div>
-          <div className={"user_message"}>
-            <p>{message}</p>
+          <div className={text.length > 0 ? "user_message" : null}>
+            <p>{text}</p>
           </div>
         </div>
-        <form
-          className="message_form"
-          action="mailto:marek.gerszendorf@wp.pl"
-          method="post"
-        >
+        <form className="message_form">
           <input
             className="message_text_area"
             type="text"

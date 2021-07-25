@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import TopBar from "./TopBar";
 import Slider from "./Slider";
@@ -30,8 +30,6 @@ import hotel_room_img3_desktop from "../img/fod_img3.png";
 
 function App() {
   const [burger, setBurger] = useState(false);
-  // const [personsValue, setPersonsValue] = useState(0);
-  // const [roomsValue, setRoomsValue] = useState(0);
 
   function handleClickBurger() {
     setBurger(!burger);
@@ -205,24 +203,6 @@ function App() {
     },
   ];
 
-  function topRatedFilter() {
-    let rating = room_data.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-    let lastElement = rating.pop();
-    return rating.unshift(lastElement);
-  }
-
-  function highestPriceFilter() {
-    let highest_price = room_data.sort((a, b) => (a.price < b.price ? 1 : -1));
-    let lastElement = highest_price.pop();
-    return highest_price.unshift(lastElement);
-  }
-
-  function lowestPriceFilter() {
-    let lowest_price = room_data.sort((a, b) => (a.price > b.price ? 1 : -1));
-    let lastElement = lowest_price.pop();
-    return lowest_price.unshift(lastElement);
-  }
-
   return (
     <div className="App">
       <Router>
@@ -245,17 +225,7 @@ function App() {
           <FindOutMore />
         </Route>
         <Route path="/Acme">
-          <RoomsForRent
-            id="rooms_for_rent"
-            room_data={room_data}
-            topRatedFilter={topRatedFilter}
-            highestPriceFilter={highestPriceFilter}
-            lowestPriceFilter={lowestPriceFilter}
-            // setPersonsValue={setPersonsValue}
-            // setRoomsValue={setRoomsValue}
-            // personsValue={personsValue}
-            // searchEngine={searchEngine}
-          />
+          <RoomsForRent id="rooms_for_rent" room_data={room_data} />
         </Route>
         <Route exact path="/FAQ">
           <FAQ />

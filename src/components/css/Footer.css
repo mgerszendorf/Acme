@@ -146,6 +146,10 @@
         padding: 1rem 2rem;
     }
 
+    .menu_links li a a{
+        padding: 0;
+    }
+
     .menu_links li a:hover{
         color: #45B5C9;
     }

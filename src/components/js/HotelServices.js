@@ -192,7 +192,7 @@ function HotelServices() {
             <h2>Advantages of our team</h2>
             <div className="adventages_team">
               {adventages_team.map((data) => (
-                <div>
+                <div key={data.id}>
                   <img src={icon} alt="Icon" />
                   <p>{data.text}</p>
                 </div>
@@ -262,7 +262,7 @@ function HotelServices() {
           {/* Desktop */}
           <div className="our_services_wrapper">
             {our_service_data.map((data) => (
-              <div className="service_desktop">
+              <div className="service_desktop" key={data.id}>
                 <div>
                   <img className="os_icon" src={data.img} alt="Service icon" />
                   <div className="os_top_section">

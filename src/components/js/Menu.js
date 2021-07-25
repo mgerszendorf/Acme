@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { RiArrowUpSLine } from "react-icons/ri";
 import mail_icon from "../img/mail_icon.png";
 import phone_icon from "../img/phone_icon.png";
+import { Link as LinkScroll } from "react-scroll";
 import { Link } from "react-router-dom";
 
 function Menu(props) {
@@ -83,7 +84,16 @@ function Menu(props) {
           </ul>
         </div>
         <div className="rooms_for_rent_m">
-          <Link>Rooms for rent</Link>
+          <LinkScroll
+            activeClass="active"
+            to="rooms_for_rent"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Link to="/Acme">Rooms for rent</Link>
+          </LinkScroll>
         </div>
         <div className="help_m">
           <Link to="/help">Help</Link>

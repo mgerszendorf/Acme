@@ -42,6 +42,7 @@ function FAQ() {
       </div>
       {question_and_answer_data.map((data) => (
         <div
+          key={data.id}
           className="qaa"
           onClick={
             activeQuestion > -1
