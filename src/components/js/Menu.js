@@ -92,7 +92,7 @@ function Menu(props) {
             offset={-70}
             duration={500}
           >
-            <Link to="/Acme">Rooms for rent</Link>
+            <Link to="/Acme" onClick={() => {props.setBurger(false); props.disableActiveMenu();}}>Rooms for rent</Link>
           </LinkScroll>
         </div>
         <div className="help_m">

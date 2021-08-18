@@ -4,11 +4,11 @@
 
 @import url("https://cdn.syncfusion.com/ej2/material.css");
 
-.header{
+.header {
     max-height: 100vh;
 }
 
-.top_bar_wrapper{
+.top_bar_wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,38 +25,38 @@
     border-radius: 8px;
 }
 
-.burger_tb div:nth-child(1){
+.burger_tb div:nth-child(1) {
     width: 1.9rem;
 }
 
-.burger_tb div:nth-child(2){
+.burger_tb div:nth-child(2) {
     width: 1.3rem;
 }
 
-.burger_tb div:nth-child(3){
+.burger_tb div:nth-child(3) {
     width: 1.6rem;
 }
 
-.top_form_tb{
+.top_form_tb {
     display: none;
 }
 
-.logo{
+.logo {
     cursor: pointer;
 }
 
-@media all and (min-width: 1024px){
-    .burger_tb{
+@media all and (min-width: 1024px) {
+    .burger_tb {
         display: none;
     }
 
-    .top_form_tb{
+    .top_form_tb {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
-    .search_btn_tb{
+    .search_btn_tb {
         width: 64px;
         height: 64px;
         border-radius: 16px;
@@ -67,11 +67,12 @@
         transition: .2s;
     }
 
-    .search_btn_tb:hover{
+    .search_btn_tb:hover {
         background-color: #cbf8ff;
     }
 
-    .persons_tb, .rooms_tb{
+    .persons_tb,
+    .rooms_tb {
         font-family: 'Red Hat Display';
         padding: 1.4rem 0 1.4rem 1.4rem;
         max-height: 4rem;
@@ -81,30 +82,32 @@
         color: #818498;
     }
 
-    .persons_tb, .rooms_tb, .search_btn_tb{
+    .persons_tb,
+    .rooms_tb,
+    .search_btn_tb {
         margin-left: 1rem;
     }
 }
 
 /* SLIDER */
 
-.slider_wrapper{
+.slider_wrapper {
     position: relative;
     height: 85vh;
 }
 
-.slider_img{
+.slider_img {
     display: none;
 }
 
-.slider_txt{
+.slider_txt {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.slider_txt p{
+.slider_txt p {
     font-family: 'Red Hat Display';
     font-weight: bold;
     font-size: 4.5rem;
@@ -114,7 +117,7 @@
     max-width: 350px;
 }
 
-.slider_bar{
+.slider_bar {
     display: flex;
     align-items: center;
     position: absolute;
@@ -130,42 +133,42 @@
     background-color: #45B5C9;
 }
 
-.progress_bar_beginning{
+.progress_bar_beginning {
     animation: progress_bar_beginning 10s alternate infinite;
 }
 
-.progress_bar_end{
+.progress_bar_end {
     animation: progress_bar_end 10s alternate infinite;
 }
 
 @keyframes progress_bar_beginning {
-    from{
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 100%;
     }
 }
 
 @keyframes progress_bar_end {
-    from{
+    from {
         width: 100%;
     }
 
-    to{
+    to {
         width: 0%;
     }
 }
 
-.slider_bar .bar{
+.slider_bar .bar {
     width: 200px;
     height: 3px;
     background: #E1E8F2;
     border-radius: 5px;
 }
 
-.slider_bar p{
+.slider_bar p {
     font-family: 'Red Hat Display';
     font-weight: 900;
     color: #818498;
@@ -174,30 +177,31 @@
     margin: 0 1rem;
 }
 
-@media all and (max-height: 500px) and (orientation: landscape){
-    .slider_bar{
+@media all and (max-height: 500px) and (orientation: landscape) {
+    .slider_bar {
         margin-bottom: 2.5rem;
     }
 }
 
-@media all and (min-width: 500px){
-    .slider_txt p{
+@media all and (min-width: 500px) {
+    .slider_txt p {
         font-size: 5.4rem;
     }
 }
 
 
-@media all and (min-width: 1024px){
-    .slider_wrapper{
+@media all and (min-width: 1024px) {
+    .slider_wrapper {
         height: 70vh;
     }
 
-    .slider_img{
+    .slider_img {
         position: relative;
         display: block;
         height: 100%;
     }
-    .slider_img img{
+
+    .slider_img img {
         position: absolute;
         top: 50%;
         right: 0;
@@ -207,22 +211,16 @@
         min-height: 540px;
     }
 
-    .slider_txt p{
-        font-size: 6.5rem;
-        max-width: 800px;
-        text-align: left;
-    }
-    
-    .slider_bar{
+    .slider_bar {
         transform: rotate(90deg);
         margin: 0;
     }
 
-    .slider{
+    .slider {
         position: relative;
     }
 
-    .slider_bar_txt{
+    .slider_bar_txt {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
@@ -235,7 +233,7 @@
         padding-left: 2rem;
     }
 
-    .slider_bar{
+    .slider_bar {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -247,17 +245,17 @@
         margin: 0;
     }
 
-    .slider_bar .bar{
+    .slider_bar .bar {
         transform: rotate(90deg);
         width: 150px;
     }
-    
-    .slider_bar p{
+
+    .slider_bar p {
         transform: rotate(0);
         font-size: 1rem;
     }
 
-    .slider_txt{
+    .slider_txt {
         position: unset;
         top: unset;
         left: unset;
@@ -266,7 +264,7 @@
         margin-left: 4.5rem;
     }
 
-    .slider_txt p{
+    .slider_txt p {
         text-align: left;
         max-width: 470px;
         font-size: 4.2rem;
@@ -275,12 +273,13 @@
 
 /* MENU */
 
-.left_area_m, .right_area_m{
+.left_area_m,
+.right_area_m {
     display: none;
 }
 
-@media all and (min-width: 1024px){
-    .menu_wrapper{
+@media all and (min-width: 1024px) {
+    .menu_wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -288,35 +287,37 @@
         width: 100vw;
         max-width: 1440px;
         margin: 0 auto;
-        padding: 0 2rem; 
+        padding: 0 2rem;
     }
 
-    .left_area_m{
+    .left_area_m {
         display: flex;
     }
 
-    .mail_m{
+    .mail_m {
         display: flex;
         align-items: center;
         margin-right: 2.7rem;
     }
 
-    .mail_txt_area_m p:nth-child(2), .phone_txt_area_m p:nth-child(2){
+    .mail_txt_area_m p:nth-child(2),
+    .phone_txt_area_m p:nth-child(2) {
         font-family: 'Red Hat Display';
         color: #818498;
         line-height: 1.5rem;
     }
 
-    .mail_icon_m, .phone_icon_m{
+    .mail_icon_m,
+    .phone_icon_m {
         margin-right: 1.2rem;
     }
 
-    .phone_m{
+    .phone_m {
         display: flex;
         align-items: center;
     }
 
-    .right_area_m{
+    .right_area_m {
         display: flex;
         align-items: center;
     }
@@ -331,7 +332,7 @@
         padding: 1.2rem;
     }
 
-    .about_us_btn_m p{
+    .about_us_btn_m p {
         font-size: 1.125rem;
         color: #22264C;
         font-family: 'Red Hat Display';
@@ -339,18 +340,25 @@
         transition: color .2s;
     }
 
-    .RiArrowUpSLine, .RiArrowUpSLine_rotate{
+    .RiArrowUpSLine,
+    .RiArrowUpSLine_rotate {
         font-size: 15px;
         color: #22264C;
         margin-left: .5rem;
     }
 
-    .RiArrowUpSLine_rotate{
+    .RiArrowUpSLine_rotate {
         transform: rotate(180deg);
         transition: .2s;
     }
 
-    .header_about_us_btn_active li a, .start_m a, .about_us_btn_m, .rooms_for_rent_m a, .help_m a, .mail_txt_area_m p:nth-child(1), .phone_txt_area_m p:nth-child(1) {
+    .header_about_us_btn_active li a,
+    .start_m a,
+    .about_us_btn_m,
+    .rooms_for_rent_m a,
+    .help_m a,
+    .mail_txt_area_m p:nth-child(1),
+    .phone_txt_area_m p:nth-child(1) {
         font-size: 1.125rem;
         color: #22264C;
         font-family: 'Red Hat Display';
@@ -358,24 +366,31 @@
         line-height: 1.5rem;
     }
 
-    .start_m a, .about_us_btn_m, .rooms_for_rent_m a, .help_m a{
+    .start_m a,
+    .about_us_btn_m,
+    .rooms_for_rent_m a,
+    .help_m a {
         padding: 2rem 1.2rem;
         transition: color .2s;
     }
 
-    .rooms_for_rent_m a a{
+    .rooms_for_rent_m a a {
         padding: 0;
     }
 
-    .start_m a:hover, .about_us_btn_m:hover, .rooms_for_rent_m a:hover, .help_m a:hover, .about_us_btn_m p:hover{
+    .start_m a:hover,
+    .about_us_btn_m:hover,
+    .rooms_for_rent_m a:hover,
+    .help_m a:hover,
+    .about_us_btn_m p:hover {
         color: #45B5C9;
     }
 
-    .header_about_us_btn_nonactive{
+    .header_about_us_btn_nonactive {
         display: none;
     }
 
-    .header_about_us_btn_active{
+    .header_about_us_btn_active {
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -385,38 +400,44 @@
         border-radius: 12px;
     }
 
-    .header_about_us_btn_active li a{
+    .header_about_us_btn_active li a {
         display: block;
         padding: 2rem;
     }
 
-    .header_about_us_btn_active li:nth-child(1) a{
+    .header_about_us_btn_active li:nth-child(1) a {
         padding-top: 1rem;
     }
 
-    .header_about_us_btn_active li a:hover{
+    .header_about_us_btn_active li a:hover {
         color: #45B5C9;
     }
 
-    .rooms_for_rent_m{
+    .rooms_for_rent_m {
         cursor: pointer;
     }
 }
 
-@media all and (min-width: 1200px){
-    .start_m a, .about_us_btn_m, .rooms_for_rent_m a, .help_m a, .about_us_btn_m{
+@media all and (min-width: 1200px) {
+
+    .start_m a,
+    .about_us_btn_m,
+    .rooms_for_rent_m a,
+    .help_m a,
+    .about_us_btn_m {
         padding: 2rem;
     }
-    
-    .mail_icon_m, .phone_icon_m{
+
+    .mail_icon_m,
+    .phone_icon_m {
         margin-right: 1.5rem;
     }
 }
 
 /* MENU BURGER */
 
-@media all and (max-width: 1024px){
-    .about_us_btn_m{
+@media all and (max-width: 1024px) {
+    .about_us_btn_m {
         display: none;
     }
 
@@ -437,7 +458,7 @@
         transition: transform .5s linear;
     }
 
-    .right_area_m a{
+    .right_area_m a {
         display: block;
         width: 100vw;
         font-size: 1.6rem;
@@ -446,11 +467,11 @@
         font-weight: 700;
     }
 
-    .right_area_m a:hover{
+    .right_area_m a:hover {
         color: #45B5C9;
     }
 
-    .active_burger{
+    .active_burger {
         transform: translate(0%, 0%);
     }
 }

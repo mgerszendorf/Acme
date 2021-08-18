@@ -84,51 +84,29 @@ function RoomsForRent(props) {
     }
   }
 
-  // function topRatedFilter() {
-  //   let rating = props.room_data.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-  //   let lastElement = rating.pop();
-  //   return rating.unshift(lastElement);
-  // }
-
-  // function highestPriceFilter() {
-  //   let highest_price = props.room_data.sort((a, b) =>
-  //     a.price < b.price ? 1 : -1
-  //   );
-  //   let lastElement = highest_price.pop();
-  //   return highest_price.unshift(lastElement);
-  // }
-
-  // function lowestPriceFilter() {
-  //   let lowest_price = props.room_data.sort((a, b) =>
-  //     a.price > b.price ? 1 : -1
-  //   );
-  //   let lastElement = lowest_price.pop();
-  //   return lowest_price.unshift(lastElement);
-  // }
-
-  // console.log(topRatedFilter());
-  // console.log(highestPriceFilter());
-  // console.log(lowestPriceFilter());
-
   function topRatedFilter() {
-    props.room_data
-      .sort((a, b) => (a.rating - b.rating ? 1 : -1))
-      .map((data) => (
-        <RoomData
-          id={data.id}
-          key={data.id}
-          name={data.name}
-          image={data.image}
-          imageDesktop={data.imageDesktop}
-          text={data.text}
-          price={data.price}
-          rating={data.rating}
-          bedrooms={data.bedrooms}
-          bathroom={data.bathroom}
-          surface={data.surface}
-          persons={data.persons}
-        />
-      ));
+    setSortByActive(!sortByActive);
+    let rating = props.room_data.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+    let lastElement = rating.pop();
+    return rating.unshift(lastElement);
+  }
+
+  function highestPriceFilter() {
+    setSortByActive(!sortByActive);
+    let highest_price = props.room_data.sort((a, b) =>
+      a.price < b.price ? 1 : -1
+    );
+    let lastElement = highest_price.pop();
+    return highest_price.unshift(lastElement);
+  }
+
+  function lowestPriceFilter() {
+    setSortByActive(!sortByActive);
+    let lowest_price = props.room_data.sort((a, b) =>
+      a.price > b.price ? 1 : -1
+    );
+    let lastElement = lowest_price.pop();
+    return lowest_price.unshift(lastElement);
   }
 
   return (
@@ -159,7 +137,7 @@ function RoomsForRent(props) {
             <input
               className="se_rooms"
               type="number"
-              placeholder="How many bedroomscd?"
+              placeholder="How many bedrooms?"
               onFocus={(e) => (e.target.placeholder = "")}
               onBlur={(e) => (e.target.placeholder = "How many rooms?")}
               onChange={(e) => {
@@ -198,19 +176,19 @@ function RoomsForRent(props) {
           </div>
           <div
             className={sortByActive ? "top_rated_active" : "top_rated"}
-            onClick={topRatedFilter}
+            onClick={() => topRatedFilter()}
           >
             <p>Top rated</p>
           </div>
           <div
             className={sortByActive ? "highest_price_active" : "highest_price"}
-            // onClick={highestPriceFilter}
+            onClick={() => highestPriceFilter()}
           >
             <p>Highest price</p>
           </div>
           <div
             className={sortByActive ? "lowest_price_active" : "lowest_price"}
-            // onClick={lowestPriceFilter}
+            onClick={() => lowestPriceFilter()}
           >
             <p>Lowest price</p>
             <div></div>

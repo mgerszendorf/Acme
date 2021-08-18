@@ -215,8 +215,6 @@
     min-height: 63px;
 }
 
-
-
 @media all and (max-width: 340px){
     .text_and_sort_by{
         padding: 1.5rem;
@@ -263,7 +261,7 @@
         transition: .3s;
     }
 
-    .lowest_price{
+    .lowest_price, .lowest_price_active{
         margin-right: 2rem;
     }
 
@@ -281,6 +279,11 @@
     .se_form .e-input-group:not(.e-float-icon-left){
         min-height: 72px;
         width: 24vw;
+    }
+
+    .highest_price_active p, .top_rated_active p, .lowest_price_active p{
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
 
